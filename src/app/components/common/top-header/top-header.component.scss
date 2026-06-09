@@ -1,0 +1,84 @@
+:root {
+  --primaryColor: #924dff; // Agregado punto y coma que faltaba
+  --paragraphColor: #696969;
+}
+
+.bg-f3f7ff {
+  background-color: #f3f7ff;
+}
+
+.top-header-area {
+  padding: {
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .container-fluid {
+    max-width: 100%;
+    padding: {
+      right: 30px;
+      left: 30px;
+    }
+  }
+}
+
+.top-header-left-content {
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-right: 0;
+
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    a {
+      display: block;
+      font-size: 15px;
+      padding-right: 22px;
+      position: relative;
+      // Usamos !important por si Bootstrap quiere meter su propio color gris/azul por defecto
+      color: var(--paragraphColor) !important; 
+
+      // CORRECCIÓN 1: El hover debe ir DENTRO del 'a' para que pinte el texto
+      &:hover {
+        color: var(--primaryColor) !important;
+      }
+    }
+
+    img {
+      right: 0;
+      top: 2px;
+      position: absolute;
+    }
+  }
+
+  &:last-child {
+    margin-left: 0;
+  }
+}
+
+.top-header-right-content {
+  padding-right: 0;
+  text-align: end;
+  margin-bottom: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    margin-left: 30px;
+    padding-right: 15px;
+
+    a {
+      font-size: 15px;
+      color: var(--paragraphColor) !important; // Evita que Bootstrap lo sobreescriba
+
+      &:hover {
+        color: var(--primaryColor) !important;
+      }
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
